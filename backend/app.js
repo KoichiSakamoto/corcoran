@@ -1,9 +1,13 @@
 const express = require("express");
 const data = require('./database/presidents');
+const cors = require('cors');
 
 const app = express()
 
-const PORT = 3000 //port 3000 used for local testing
+app.use(cors());
+app.options('*', cors());
+
+const PORT = 4000 //port 4000 used for local testing
 
 //implemented a comparison function to sort the JSON data.
 const presidentsAscending = () => {
