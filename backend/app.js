@@ -7,8 +7,7 @@ const PORT = 3000 //port 3000 used for local testing
 
 //implemented a comparison function to sort the JSON data.
 const presidentsAscending = () => {
-  let dataCopy = data.presidents //pure copy of data made so that in-place sort method does not affect data
-  let returnArray = dataCopy.sort((aPresident, bPresident) =>  {
+  let returnArray = data.presidents.sort((aPresident, bPresident) =>  {
 
     if (aPresident.name < bPresident.name) {
       return -1
@@ -25,8 +24,7 @@ const presidentsAscending = () => {
 
 //same comparison function for the JSON data.
 const presidentsDescending = () => {
-  let dataCopy = data.presidents //pure copy of data made so that in-place sort method does not affect data
-  let returnArray = dataCopy.sort((aPresident, bPresident) =>  {
+  let returnArray = data.presidents.sort((aPresident, bPresident) =>  {
 
     if (aPresident.name > bPresident.name) {
       return -1
