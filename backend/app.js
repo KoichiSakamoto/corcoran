@@ -39,13 +39,30 @@ const presidentsDescending = () => {
   return returnArray
 }
 
+//if you want the presidents in chronological order
+const presidentsChronological = () => {
+  let returnArray = data.presidents.sort((aPresident, bPresident) =>  {
+
+    if (aPresident.id < bPresident.id) {
+      return -1
+    }
+    if (aPresident.id > bPresident.id) {
+      return 1
+    }
+    if (aPresident.id == bPresident.id) {
+      return 0
+    }
+  })
+  return returnArray
+}
+
 app.listen(PORT, () => {
   console.log(`server running on port: ${PORT}`)
 })
 
 //standard route for all presidents, in the order they are in the database.
 app.get("/api/presidents", (req, res) => {
- res.json(data.presidents);
+ res.json(presidentsChronological());
 });
 
 //two different routes for ascending/descending requests.
