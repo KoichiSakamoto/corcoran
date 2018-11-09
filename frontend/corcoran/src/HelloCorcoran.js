@@ -63,9 +63,11 @@ class HelloCorcoran extends Component {
     return (
       <div className="App">
         <h1> Welcome, Corcoran! </h1>
-        <Button onClick={this.displayAscending}> Ascending </Button>
-        <Button onClick={this.displayChronological}> Chronological </Button>
-        <Button onClick={this.displayDescending}> Descending </Button>
+        <div className="button-bar">
+          <Button onClick={this.displayAscending} bsStyle="primary"> Ascending </Button>
+          <Button onClick={this.displayChronological} bsStyle="success"> Chronological </Button>
+          <Button onClick={this.displayDescending} bsStyle="danger"> Descending </Button>
+        </div>
         {this.LoadingOrNot()}
       </div>
     );
