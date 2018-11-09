@@ -2,7 +2,7 @@ import React from 'react';
 
 const PresidentList = (props) =>
   <ul className="pres-list">
-    <li> Hello </li>
+    {props.displayPresidents()}
   </ul>
 
 export default PresidentList;
